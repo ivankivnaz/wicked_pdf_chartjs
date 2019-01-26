@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src='../vendor/Chart.bundle.min.js'></script>
+  <title>Document</title>
+  <style>
+    .title {
+      font-size: 36px;
+      text-align: center;
+    }
+    .chart_title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .chart_container {
+      width:1200px;
+      height:600px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class='title'>Test template!</div>
+  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula porta tincidunt. Sed viverra cursus ipsum quis
+  sollicitudin. Fusce non ultrices orci, vel gravida dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+  Etiam tempus porta est, a elementum dui mollis ac. Suspendisse vel lacinia ex. Ut sagittis orci sed elementum
+  efficitur. Curabitur mattis nulla id dui pulvinar condimentum. Morbi congue tincidunt laoreet. Curabitur enim augue,
+  dictum non lacus sit amet, volutpat rutrum lectus. Nullam a augue semper, sollicitudin leo at, ullamcorper urna.
+  Integer lacinia vestibulum dolor, et tristique dui pulvinar id. Proin dapibus erat orci, ac aliquam augue aliquet at.
+  Phasellus iaculis varius diam, sed pulvinar eros pellentesque a. Etiam a pellentesque ante. Nullam mattis pretium metus
+  id condimentum.</div>
+  <div class='chart_title'>Radar chart</div>
+  <div class='chart_container'>
+    <canvas id="radar-chart" width='1200' height='600'></canvas>
+  </div>
+  <script>
+    Function.prototype.bind = Function.prototype.bind || function (thisp) {
+      var fn = this;
+      return function () {
+        return fn.apply(thisp, arguments);
+      };
+    };
+
+    Chart.defaults.global.animation = false;
+    new Chart(
+      document.getElementById("radar-chart"),
+      {
+        type: 'radar',
+        data: {
+          labels: ["Africa", "Asia", "Europe", "Latin America", "North America", "Test"],
+          datasets: [
+            {
+              label: "1950",
+              fill: true,
+              backgroundColor: "rgba(179,181,198,0.2)",
+              borderColor: "rgba(179,181,198,1)",
+              pointBorderColor: "#fff",
+              pointBackgroundColor: "rgba(179,181,198,1)",
+              data: [8.77, 55.61, 21.69, 66.62, 65.82, 45.55]
+            }, {
+              label: "2050",
+              fill: true,
+              backgroundColor: "rgba(255,99,132,0.2)",
+              borderColor: "rgba(255,99,132,1)",
+              pointBorderColor: "#fff",
+              pointBackgroundColor: "rgba(255,99,132,1)",
+              pointBorderColor: "#fff",
+              data: [25.48, 54.16, 7.61, 68.06, 45.45, 45.55]
+            }
+          ]
+        },
+        options: {
+          title: {
+            display: true,
+            text: 'Distribution in % of world population',
+            fontSize: 20
+          },
+          legend: {
+            display: true,
+            labels: {
+              fontSize: 20
+            }
+          },
+          scale: {
+            pointLabels: {
+              fontSize: 20
+            }
+          }
+        }
+      }
+    );
+  </script>
+</body>
+</html>
