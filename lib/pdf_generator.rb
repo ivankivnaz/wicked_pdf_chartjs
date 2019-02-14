@@ -1,12 +1,10 @@
 require 'wicked_pdf'
 require 'pry'
 
-WickedPdf.config = {
-  exe_path: '/usr/local/bin/wkhtmltopdf'
-}
+WickedPdf.config = {exe_path: "#{ENV['GEM_HOME']}/bin/wkhtmltopdf"}
 
-chartjs_template = '/home/naz/dev/pdf_with_charts/lib/chartjs.html'
-plotlyjs_template = '/home/naz/dev/pdf_with_charts/lib/plotlyjs.html'
+chartjs_template = '/Users/nazariiivankiv/dev/wicked_pdf_chartjs/lib/chartjs.html'
+plotlyjs_template = '/Users/nazariiivankiv/dev/wicked_pdf_chartjs/lib/plotlyjs.html'
 
 pdf = WickedPdf.new.pdf_from_html_file(
   chartjs_template,

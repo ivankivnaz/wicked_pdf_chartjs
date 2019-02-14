@@ -7,7 +7,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     wicked_pdf (1.1.0)
-    wkhtmltopdf-binary (0.12.4)
+    wkhtmltopdf-binary-edge (0.12.5.0)
 
 PLATFORMS
   ruby
@@ -15,7 +15,7 @@ PLATFORMS
 DEPENDENCIES
   pry
   wicked_pdf
-  wkhtmltopdf-binary
+  wkhtmltopdf-binary-edge
 
 BUNDLED WITH
    1.16.5
